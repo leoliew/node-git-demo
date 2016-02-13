@@ -70,7 +70,7 @@ module.exports = {
       })
       .done(function(commitId) {
         console.log("New Commit: ", commitId);
-        callback(null,commitId);
+        callback(null,commitId.toString());
       });
   }
 };

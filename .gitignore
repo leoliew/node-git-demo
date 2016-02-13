@@ -40,7 +40,7 @@
 ################################################
 
 config/local.js
-
+config/auth.js
 
 
 
@@ -117,3 +117,5 @@ nbproject
 .idea
 .node_history
 coverage
+
+
