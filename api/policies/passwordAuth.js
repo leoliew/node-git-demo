@@ -12,11 +12,7 @@ module.exports = function(req, res, next) {
   // User is allowed, proceed to the next policy,
   // or if this is the last policy, the controller
 
-  var password = req.query.password;
-
-  console.log(password == sails.config.auth.password);
-
-  if (req.query.password && (req.query.password == sails.config.auth.password)) {
+  if (req.body.password && (req.body.password == sails.config.auth.password)) {
     return next();
   }
 

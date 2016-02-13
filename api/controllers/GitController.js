@@ -12,7 +12,15 @@ module.exports = {
    */
 
   update:function(req,res){
-    GitService.updateGit(function(err,result){
+    var passed = false;
+    var content = 'level1';
+    if(req.body.status && req.body.status == "passed"){
+      passed = true
+    }
+    if(req.body.content){
+      content = req.body.content;
+    }
+    GitService.updateGit(content,passed,function(err,result){
       if(err){
         res.json({err:err});
       }else{
