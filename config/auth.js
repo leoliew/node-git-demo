@@ -3,5 +3,5 @@
  */
 
 module.exports.auth = {
-  password: 'leopowernowilove123*&%'
+  password: 'leopowernowilove123'
 };
