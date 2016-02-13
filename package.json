@@ -1,0 +1,37 @@
+{
+  "name": "node-git-demo",
+  "private": true,
+  "version": "0.0.1",
+  "description": "node-git-demo server application",
+  "keywords": [],
+  "dependencies": {
+    "bcrypt": "^0.8.5",
+    "bytes": "^2.1.0",
+    "jade": "^1.11.0",
+    "lodash": "^4.3.0",
+    "rc": "~0.5.0",
+    "sails": "0.11.3",
+    "sails-disk": "^0.10.9",
+    "sails-hook-cron": "^2.2.0",
+    "sails-memory": "^0.10.6"
+  },
+  "devDependencies": {
+    "istanbul": "^0.3.6",
+    "grunt-mocha-istanbul": "^2.2.0",
+    "barrels": "^1.4.0",
+    "mocha": "*",
+    "should": "*",
+    "sails-memory": "^0.10.5",
+    "superagent": "^1.4.0"
+  },
+  "scripts": {
+    "clean": "rm -rf ./.tmp",
+    "debug": "node debug app.js",
+    "docs": "esdoc -c esdoc.json",
+    "start": "node app.js",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "test": "NODE_ENV=unit_test node_modules/.bin/mocha",
+    "coverage": "NODE_ENV=unit_test node_modules/.bin/istanbul cover node_modules/mocha/bin/_mocha"
+  },
+  "main": "app.js"
+}
