@@ -1,0 +1,17 @@
+{
+  "apps" : [{
+    "name"        : "node-git-9001",
+    "script"      : "app.js",
+    "args"        : "['--prod','--stack-size=32000']",
+    "log_date_format"  : "YYYY-MM-DD HH:mm:ss Z",
+    "error_file"       : "/var/log/node/applogs/node-git-9001-err.log",
+    "out_file"         : "/var/log/node/applogs/node-git-9001-out.log",
+    "ignore_watch" : ["[\\/\\\\]\\./", "node_modules"],
+    "watch"       : false,
+    "merge_logs"  : true,
+    "cwd"         : "./",
+    "env": {
+      "PORT": 9001
+    }
+  }]
+}
