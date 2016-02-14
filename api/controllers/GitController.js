@@ -20,7 +20,7 @@ module.exports = {
     if(req.body.content){
       content = req.body.content;
     }
-    GitService.updateGit(content,passed,function(err,result){
+    GitService.updateGit2(content,passed,function(err,result){
       if(err){
         res.json({err:err});
       }else{
