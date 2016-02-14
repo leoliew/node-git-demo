@@ -20,14 +20,34 @@ module.exports = {
     if(req.body.content){
       content = req.body.content;
     }
-    GitService.updateGit2(content,passed,function(err,result){
+    GitService.updateGit(content,passed,function(err,result){
       if(err){
         res.json({err:err});
       }else{
         res.json({msg:'success',data:result});
       }
     });
+  },
 
+
+  pullRepo:function(req,res){
+    GitService.pullRepo(function(err,result){
+      if(err){
+        res.json({code:1,err:err});
+      }else{
+        res.json({code:0,msg:'success',data:result});
+      }
+    });
+  },
+
+  addAndCommit:function(req,res){
+    GitService.addAndCommit(function(err,result){
+      if(err){
+        res.json({code:1,err:err});
+      }else{
+        res.json({code:0,msg:'success',data:result});
+      }
+    });
   },
 
   _config: {

@@ -50,7 +50,9 @@ module.exports.policies = {
   // }
 
    GitController: {
-    update : ['passwordAuth']
+    update : ['passwordAuth'],
+    pullRepo: ['gitAuth'],
+    addAndCommit: ['gitAuth']
    }
 
 };
