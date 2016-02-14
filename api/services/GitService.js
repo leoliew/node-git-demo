@@ -7,7 +7,7 @@ var fs = require('fs-extra');
 require('date-utils');
 
 
-var simpleGit = require('simple-git')(sails.config.auth.repositoryPath);
+
 
 module.exports = {
   updateGit: function (content,passed,callback) {
@@ -35,12 +35,14 @@ module.exports = {
 
 
   pullRepo: function(callback){
+    var simpleGit = require('simple-git')(sails.config.auth.repositoryPath);
     simpleGit.pull(sails.config.auth.remote,sails.config.auth.branch, function(err, update) {
       callback(err,update);
     })
   },
 
   addAndCommit: function(callback){
+    var simpleGit = require('simple-git')(sails.config.auth.repositoryPath);
     var commitComment = "update " + new Date().toFormat('YYYY-MM-DD') + ' check in!';
     simpleGit.add('./*').commit(commitComment).push('origin', sails.config.auth.branch,function(err, update) {
       callback(err,update);
